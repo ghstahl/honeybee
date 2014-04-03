@@ -1,0 +1,1 @@
+<script src="/static/ngApps/1/requireBootstrap.js"></script>
