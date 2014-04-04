@@ -1,0 +1,21 @@
+{
+    "appname": "beeapi",
+    "httpport": 8080,
+    "mysqlport": 3600,
+    "PI": 3.1415976,
+    "runmode": "dev",
+    "autorender": false,
+    "copyrequestbody": true,
+    "database": {
+        "host": "host",
+        "port": "port",
+        "database": "database",
+        "username": "username",
+        "password": "password",
+        "conns":{
+            "maxconnection":12,
+            "autoconnect":true,
+            "connectioninfo":"info"
+        }
+    }
+}
