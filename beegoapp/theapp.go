@@ -1,17 +1,21 @@
 package beegoapp
 
 import (
+	_ "honeybee/filters"
 	"github.com/bradrydzewski/go.auth"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/config"
-	"github.com/astaxie/beego/context"
+
 	"fmt"
+	"honeybee/filters"
 )
 
+var TheApp = &BeegoApp{}
 type BeegoApp struct {
 	// provider specifies the policy for authenticating a user.
 	TheAuthHandler *auth.AuthHandler
 }
+
 
 func (self *BeegoApp) initializeAuth() {
 	auth.Config.CookieSecret = []byte("7H9xiimk2QdTdYI7rDddfJeV")
@@ -21,6 +25,10 @@ func (self *BeegoApp) initializeAuth() {
 }
 
 func (self *BeegoApp) initializeFilters() {
+
+	filters.TheFilterConfigs.Load()
+
+
 	jsonconf, err := config.NewConfig("json", "conf/filters.json")
 	if err != nil {
 		panic(err)
@@ -29,22 +37,11 @@ func (self *BeegoApp) initializeFilters() {
 		panic("appname not equal to beeapi")
 	}
 
-	var FilterUser = func(ctx *context.Context) {
-		fmt.Println(fmt.Sprintf("ctx.Request.URL: %v",ctx.Request.URL))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.RequestURI: %v",ctx.Request.URL.RequestURI()))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.Opaque: %v",ctx.Request.URL.Opaque))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.RawQuery: %v",ctx.Request.URL.RawQuery))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.Fragment: %v",ctx.Request.URL.Fragment))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.Host: %v",ctx.Request.URL.Host))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.Path: %v",ctx.Request.URL.Path))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.User: %v",ctx.Request.URL.User))
+	userfilter := jsonconf.String("userfilter");
+	fmt.Println(userfilter)
 
-		fmt.Println(fmt.Sprintf("ctx.Request: %v",ctx.Input.))
-
-
-}
-
-	beego.InsertFilter("*", beego.AfterStatic, FilterUser)
+	theFunc := filters.TheFilters.FetchFilterFunc("UserFilterFunc")
+	beego.InsertFilter("*", beego.AfterStatic,   theFunc)
 }
 
 func (self *BeegoApp) Initialize() {
@@ -56,4 +53,4 @@ func (self *BeegoApp) Run() {
 	beego.Run()
 }
 
-var TheApp = &BeegoApp{}
+

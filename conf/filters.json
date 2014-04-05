@@ -17,5 +17,17 @@
             "autoconnect":true,
             "connectioninfo":"info"
         }
-    }
+    },
+    "userfilter":[
+        {
+            "maxconnection":12,
+            "autoconnect":true,
+            "connectioninfo":"info"
+        },
+        {
+            "maxconnection":12,
+            "autoconnect":true,
+            "connectioninfo":"info"
+        }
+    ]
 }
