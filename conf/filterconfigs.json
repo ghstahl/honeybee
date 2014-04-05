@@ -1,10 +1,10 @@
 {
-    "filters":
-    [
-        {
-            "filter":"UserFilterFunc",
-            "pattern":"*",
-            "position":"beego.AfterStatic"
-        }
-    ]
+"filters":
+[
+{
+"filter":"UserFilterFunc",
+"pattern":"*",
+"position":"beego.AfterStatic"
+}
+]
 }

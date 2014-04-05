@@ -40,8 +40,8 @@ func (self *BeegoApp) initializeFilters() {
 	userfilter := jsonconf.String("userfilter");
 	fmt.Println(userfilter)
 
-	theFunc := filters.TheFilters.FetchFilterFunc("UserFilterFunc")
-	beego.InsertFilter("*", beego.AfterStatic,   theFunc)
+//	theFunc := filters.TheFilters.FetchFilterFunc("UserFilterFunc")
+//	beego.InsertFilter("*", beego.AfterStatic,   theFunc)
 }
 
 func (self *BeegoApp) Initialize() {

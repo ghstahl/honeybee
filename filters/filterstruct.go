@@ -12,13 +12,9 @@ type Filters struct{
 }
 var TheFilters Filters
 
-type FilterFuncer interface {
-	FetchFilterFunc() beego.FilterFunc
-}
+func (this *Filters) FetchFilterFunc( name string ) beego.FilterFunc{
 
-func (self *Filters) FetchFilterFunc( name string ) beego.FilterFunc{
-
-	filterMethodVal := reflect.ValueOf(self).MethodByName(name)
+	filterMethodVal := reflect.ValueOf(this).MethodByName(name)
 	// turn that into an interface{}
 	filterMethodIface := filterMethodVal.Interface()
 	// turn that into a function that has the expected signature
