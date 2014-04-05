@@ -1,12 +1,10 @@
-[
-    {
-        "maxconnection":12,
-        "autoconnect":true,
-        "connectioninfo":"info"
-    },
-    {
-        "maxconnection":12,
-        "autoconnect":true,
-        "connectioninfo":"info"
-    }
-]
+{
+    "filters":
+    [
+        {
+            "filter":"UserFilterFunc",
+            "pattern":"*",
+            "position":"beego.AfterStatic"
+        }
+    ]
+}

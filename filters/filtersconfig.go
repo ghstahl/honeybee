@@ -4,10 +4,33 @@ import (
 	"os"
 	"fmt"
 	"io/ioutil"
+	"encoding/json"
 )
 
-type FilterConfigs struct{
+/*
+{
+    "filters":
+    [
+        {
+            "filter":"UserFilterFunc",
+            "pattern":"*",
+            "position":"beego.AfterStatic"
+        }
+    ]
+}
+*/
 
+type FilterType struct {
+	Filter     string
+	Pattern string
+	Position    string
+}
+type FilterConfigJsonObject struct {
+	Filters   []FilterType
+}
+
+type FilterConfigs struct{
+	Config FilterConfigJsonObject
 }
 var TheFilterConfigs = &FilterConfigs{}
 
@@ -18,4 +41,6 @@ func (this *FilterConfigs) Load() {
 		os.Exit(1)
 	}
 	fmt.Printf("%s\n", string(file))
+	json.Unmarshal(file, &this.Config)
+	fmt.Printf("Results: %v\n", this.Config)
 }
