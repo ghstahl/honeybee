@@ -7,7 +7,8 @@ import (
 	"github.com/astaxie/beego/config"
 
 	"fmt"
-	"honeybee/filters"
+//	"honeybee/filters"
+	"github.com/ghstahl/pingbeego/filters"
 )
 
 var TheApp = &BeegoApp{}
@@ -26,7 +27,8 @@ func (self *BeegoApp) initializeAuth() {
 
 func (self *BeegoApp) initializeFilters() {
 
-	filters.TheFilterConfigs.Load()
+	filters.TheFilterConfigs.Load();
+//	filters.TheFilterConfigs.Load()
 
 
 	jsonconf, err := config.NewConfig("json", "conf/filters.json")
