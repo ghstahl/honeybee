@@ -2,7 +2,7 @@
 "filters":
 [
 {
-"filter":"UserFilter",
+"struct":"UserFilterType",
 "pattern":"*",
 "position":"beego.AfterStatic"
 }
