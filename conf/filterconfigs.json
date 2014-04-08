@@ -1,10 +1,15 @@
 {
-"filters":
-[
-{
-"struct":"UserFilterType",
-"pattern":"*",
-"position":"beego.AfterStatic"
-}
-]
+    "filters":
+    [
+        {
+            "struct":"UserFilterType",
+            "pattern":"*",
+            "position":"beego.AfterStatic"
+        },
+        {
+            "struct": "AuthFilterType",
+            "pattern": "/support/*.*",
+            "position": "beego.AfterStatic"
+        }
+    ]
 }

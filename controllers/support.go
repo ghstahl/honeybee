@@ -23,4 +23,9 @@ func (this *SupportController) Get() {
 	this.Data["Title"] = "support Well Hell"
 
 
+	//user := this.Ctx.Request.URL.User
+	//this.Data["LoggedInAs"] = user
+
+
+
 }

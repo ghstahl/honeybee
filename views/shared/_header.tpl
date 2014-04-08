@@ -65,6 +65,7 @@
                     </ul>
                 </li>
             </ul>
+            <p class="nav navbar-text">[[.LoggedInAs]]</p>
         </div>
 
     </nav>

@@ -6,6 +6,8 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/ghstahl/pingbeego/reflection"
 	"reflect"
+	"github.com/bradrydzewski/go.auth"
+	"net/url"
 )
 
 type UserFilterType struct {
@@ -13,15 +15,22 @@ type UserFilterType struct {
 
 func (v UserFilterType) FilterFunc() beego.FilterFunc{
 	return func(ctx *context.Context) {
-		fmt.Println(fmt.Sprintf("ctx.Request.URL: %v",ctx.Request.URL))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.RequestURI: %v",ctx.Request.URL.RequestURI()))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.Opaque: %v",ctx.Request.URL.Opaque))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.RawQuery: %v",ctx.Request.URL.RawQuery))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.Fragment: %v",ctx.Request.URL.Fragment))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.Host: %v",ctx.Request.URL.Host))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.Path: %v",ctx.Request.URL.Path))
-		fmt.Println(fmt.Sprintf("ctx.Request.URL.User: %v",ctx.Request.URL.User))
+		user, err := auth.GetUserCookie(ctx.Request)
+		//if no active user session then authorize user
+		if err != nil || user.Id() == "" {
+			fmt.Println(fmt.Sprintf("&&&&&NO USER&&&&&&&&&&"))
+			//http.Redirect(w, r, Config.LoginRedirect, http.StatusSeeOther)
+			return
+		}
+		ctx.Request.URL.User = url.User(user.Id())
+
+		fmt.Println(fmt.Sprintf("$$$$$$$$$$$$$$$ USER $$$$$$$$$$$$$$$"))
+		fmt.Println(user)
+
+		ctx.Input.Data["LoggedInAs"] = ctx.Request.URL.User.Username()
+
 	}
+
 }
 
 func init() {
