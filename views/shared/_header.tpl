@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Brand</a>
+            <a class="navbar-brand" href="/">PingBeeGo</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -82,12 +82,10 @@
                     </div>
                 </li>
             </ul>
-
-             <p class="nav navbar-text">[[.User.Id]]</p>
-
         </div>
 
     </nav>
+    [[if .Jumbotron]]
     <div class="jumbotron">
         <h1>
             Hello, world!
@@ -99,5 +97,6 @@
             <a class="btn btn-primary btn-large" href="#">Learn more</a>
         </p>
     </div>
+    [[end]]
 </div>
 
