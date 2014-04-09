@@ -28,6 +28,7 @@ func (v UserFilterType) FilterFunc() beego.FilterFunc{
 		fmt.Println(user)
 
 		ctx.Input.Data["LoggedInAs"] = ctx.Request.URL.User.Username()
+		ctx.Input.Data["User"] = user
 
 	}
 
