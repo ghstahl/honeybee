@@ -55,6 +55,8 @@ func init(){
 	}
 	TheNonceStore = &SimpleNonceStore{
 		nonceCache }
+
+	fmt.Println(fmt.Sprintf("max_nonce_age: %v",max_nonce_age))
 }
 
 
@@ -95,9 +97,9 @@ func (this *SimpleNonceStore) Accept(endpoint, nonce string) error {
 		return err
 	}
 	now := time.Now()
-	diff := now.Sub(ts)
-	if diff > *max_nonce_age {
-		return fmt.Errorf("Nonce too old: %ds", diff.Seconds())
+	diff := now.Sub(ts).Seconds()
+	if diff > max_nonce_age.Seconds() {
+		return fmt.Errorf("Nonce too old: %ds", diff)
 	}
 
 
@@ -110,7 +112,7 @@ func (this *SimpleNonceStore) Accept(endpoint, nonce string) error {
 			return errors.New("Nonce already used")
 		}
 	}
-	var xSeconds = int64(*max_nonce_age+1);
+	var xSeconds = int64(max_nonce_age.Seconds()+1);
 	fmt.Println(fmt.Sprintf("xSeconds:%v",xSeconds))
 	this.NonceCache.Put(endpoint,nonce,xSeconds)
 	return nil
