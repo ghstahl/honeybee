@@ -15,6 +15,7 @@ type UserFilterType struct {
 
 func (v UserFilterType) FilterFunc() beego.FilterFunc{
 	return func(ctx *context.Context) {
+
 		user, err := auth.GetUserCookie(ctx.Request)
 		//if no active user session then authorize user
 		if err != nil || user.Id() == "" {

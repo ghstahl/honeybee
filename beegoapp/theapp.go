@@ -9,20 +9,23 @@ import (
 	"fmt"
 //	"honeybee/filters"
 	"github.com/ghstahl/pingbeego/filters"
+	"honeybee/auth/openid"
+
 )
 
 var TheApp = &BeegoApp{}
 type BeegoApp struct {
 	// provider specifies the policy for authenticating a user.
 	TheAuthHandler *auth.AuthHandler
-}
 
+}
 
 func (self *BeegoApp) initializeAuth() {
 	auth.Config.CookieSecret = []byte("7H9xiimk2QdTdYI7rDddfJeV")
 	auth.Config.LoginSuccessRedirect = "/#/about/me"
 	auth.Config.CookieSecure = false
 	self.TheAuthHandler = auth.OpenId("https://accounts.google.com/o/openid2/auth")
+	self.TheAuthHandler.Success = openid.MySuccess
 }
 
 func (self *BeegoApp) initializeFilters() {
@@ -46,7 +49,10 @@ func (self *BeegoApp) initializeFilters() {
 //	beego.InsertFilter("*", beego.AfterStatic,   theFunc)
 }
 
+
+
 func (self *BeegoApp) Initialize() {
+
 	self.initializeAuth()
 	self.initializeFilters()
 }

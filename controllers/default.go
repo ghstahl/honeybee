@@ -3,6 +3,8 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"fmt"
+
+	"html/template"
 )
 
 type MainController struct {
@@ -19,6 +21,8 @@ func (this *MainController) Prepare() {
 	this.Data["Jumbotron"] = true
 	this.LayoutSections["HtmlHead"] = ""
 	this.Layout = "shared/_layout.tpl"
+	this.Data["xsrf_token"] = this.XsrfToken()
+	this.Data["xsrfdata"]=template.HTML(this.XsrfFormHtml())
 }
 
 func (this *MainController) Get() {
@@ -29,5 +33,7 @@ func (this *MainController) Get() {
 	this.Data["Email"] = "astaxie@gmail.com"
 	this.Data["Title"] = "Well Hell"
 
+	v := this.GetSession("user")
+	fmt.Println(v)
 
 }
