@@ -4,9 +4,9 @@
 require.config({
     baseUrl: '/static/ngApps/2048',
     paths: {
-        'angular': '/static/angular/angular-1.2.15/angular',
-        'angular-resource': '/static/angular/angular-1.2.15/angular-resource',
-        'angular-route': '/static/angular/angular-1.2.15/angular-route',
+        'angular': '/static/angular/angular-1.2.16/angular',
+        'angular-resource': '/static/angular/angular-1.2.16/angular-resource',
+        'angular-route': '/static/angular/angular-1.2.16/angular-route',
         'bootstrap': '/static/bootstrap.3.1.1/js/bootstrap.min',
         'jquery': '/static/js/jquery-2.1.0.min',
         'angular_ui_bootstrap': '/static/angular/ui-bootstrap-tpls-0.10.0.min'
@@ -16,6 +16,9 @@ require.config({
             deps: ['angular', 'angular-route', 'angular-resource','bootstrap','angular_ui_bootstrap']
         },
         'angular-route': {
+            deps: ['angular']
+        },
+        'angular_resource': {
             deps: ['angular']
         },
         'angular_ui_bootstrap': {

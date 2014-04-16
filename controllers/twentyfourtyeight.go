@@ -15,7 +15,7 @@ func (this *TwentyFourtyEightController) Prepare() {
 	this.LayoutSections["SharedHead"] = "shared/_head.tpl"
 	this.LayoutSections["Header"] = "shared/_header.tpl"
 	this.LayoutSections["Footer"] = "shared/_footer.tpl"
-	this.LayoutSections["HtmlHead"] = ""
+	this.LayoutSections["HtmlHead"] = "ngApps/2048/htmlHead.tpl"
 	this.Layout = "shared/_layout.tpl"
 }
 func (this *TwentyFourtyEightController) Get() {

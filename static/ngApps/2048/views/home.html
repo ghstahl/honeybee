@@ -1,9 +1,26 @@
 <section ng-controller="HomeViewController">
     <h1 app-style="italic">{{page.heading}}</h1>
-    <div class="scores-container">
-        <div class="score-container">{{ page.currentScore }}</div>
-        <div class="best-container">{{ page.highScore }}</div>
+
+    <div id="heading" class="row">
+        <h1 class="title">ng-2048</h1>
+        <div class="scores-container">
+            <div class="score-container">{{ page.currentScore }}</div>
+            <div class="best-container">{{ page.highScore }}</div>
+        </div>
+    </div>
+    <!-- instructions -->
+    <div id="instructions" class="row">
+        Join the numbers and get to the <strong>2048</strong> tile!
+        <button ng-click='newGame()' class="restart-button">New game</button>
     </div>
 
-    <p>This is the homepage...</p>
+
+    <p class="game-explanation">
+        <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+    </p>
+    <hr>
+
+    <p>
+        <strong class="important">NOTE:</strong> This game was written using AngularJS.
+    </p>
 </section>

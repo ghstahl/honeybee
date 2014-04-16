@@ -22,7 +22,7 @@
         <div class="row clearfix">
         [[.Footer]]
         </div>
-
+        <script src="/static/requireJS/2.1.11/minified/require.js"></script>
         [[.Script]]
     </div>
 	</body>
