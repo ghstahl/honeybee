@@ -19,10 +19,25 @@ define(['app'], function(app)
                     highScore: 2048
                 };
                 $scope.phones = Phone.query();
-                KeyboardService.init();
-                KeyboardService.on(function(key) {
-                    console.log(key)
-                });
+
+                $scope.game = GameManager;
+
+                // Create a new game
+                $scope.newGame = function() {
+                    KeyboardService.init();
+                    $scope.game.newGame();
+                    $scope.startGame();
+                };
+                $scope.startGame = function() {
+                    var self = $scope;
+                    KeyboardService.on(function(key) {
+                        console.log(key)
+                    });
+                };
+
+                // Create a new game on boot
+                $scope.newGame();
+
             }
         ]);
 });
