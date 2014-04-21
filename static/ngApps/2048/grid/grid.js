@@ -8,6 +8,33 @@ define(['app'], function(app){
                 // Size of the board
                 this.size   = 4;
                 // ...
+
+                // Build game board
+                this.buildEmptyGameBoard = function() {
+                    var self = this;
+                }
+            }
+        ]);
+
+    app.factory('GridFactory',
+        [
+            function()
+            {
+                var theFactory = function(pos, val)
+                {
+                    this.grid   = [];
+                    this.tiles  = [];
+                    // Size of the board
+                    this.size   = 4;
+                    // ...
+
+                    // Build game board
+                    this.buildEmptyGameBoard = function() {
+                        var self = this;
+                    }
+                };
+
+                return theFactory;
             }
         ]);
 
@@ -27,15 +54,4 @@ define(['app'], function(app){
         ]);
 
 
-    app.service('GridService',
-        [
-            'TileModel',
-            function(TileModel)
-            {
-                this.tiles  = [];
-                this.tiles.push(new TileModel({x: 1, y: 1}, 2));
-                this.tiles.push(new TileModel({x: 1, y: 2}, 2));
-                // ...
-            }
-        ]);
 });

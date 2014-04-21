@@ -5,10 +5,20 @@ define([], function()
 {
     var scriptElement = document.querySelector("script[src$='routes.js']");
     var currentScriptPath = scriptElement.src;
-    console.log("currentScriptPath:"+currentScriptPath);
-    var baseUrl = currentScriptPath.substring(0, currentScriptPath.lastIndexOf('/') + 1);
+    var absoluteBaseUrl = currentScriptPath.substring(0, currentScriptPath.lastIndexOf('/') + 1);
+    console.log('absoluteBaseUrl:' + absoluteBaseUrl);
+
+    var parser = document.createElement('a');
+    parser.href = absoluteBaseUrl;
+    var baseUrl = parser.pathname;
+    console.log('baseUrl:' + baseUrl);
+
+    var requireConfig = requirejs.s.contexts._.config;
+
+
     console.log("baseUrl:"+baseUrl);
     return {
+        baseUrl:baseUrl,
         defaultRoutePath: '/',
         routes: {
             '/': {

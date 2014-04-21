@@ -3,7 +3,7 @@
  */
 define(['routes','services/dependencyResolverFor'], function(config, dependencyResolverFor)
 {
-    var app = angular.module('app', ['ngRoute','ui.bootstrap','ngResource']);
+    var app = angular.module('app', ['ngRoute','ui.bootstrap','ngResource','ngCookies','ngAnimate']);
 
     app.config(
         [
@@ -16,11 +16,12 @@ define(['routes','services/dependencyResolverFor'], function(config, dependencyR
 
             function($routeProvider, $locationProvider, $controllerProvider, $compileProvider, $filterProvider, $provide)
             {
-                app.controller = $controllerProvider.register;
-                app.directive  = $compileProvider.directive;
-                app.filter     = $filterProvider.register;
-                app.factory    = $provide.factory;
-                app.service    = $provide.service;
+                app.controller  = $controllerProvider.register;
+                app.directive   = $compileProvider.directive;
+                app.filter      = $filterProvider.register;
+                app.factory     = $provide.factory;
+                app.service     = $provide.service;
+                app.routes      = config;
 
                 $locationProvider.html5Mode(false);
 

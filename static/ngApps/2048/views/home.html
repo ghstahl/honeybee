@@ -14,6 +14,26 @@
         <button ng-click='newGame()' class="restart-button">New game</button>
     </div>
 
+    <div id="game-container">
+        <div grid ng-model='game' class="row"></div>
+
+        <div id="game-over" ng-if="game.gameOver" class="row game-overlay">
+            Game over
+
+            <div class="lower">
+                <a class="retry-button" ng-click='newGame()'>Try again</a>
+            </div>
+        </div>
+
+        <div id="win" ng-if="game.win" class="row game-overlay">
+            You win!
+
+            <div class="lower">
+                <a class="retry-button" ng-click='newGame()'>Try again</a>
+            </div>
+        </div>
+    </div>
+
 
     <p class="game-explanation">
         <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>

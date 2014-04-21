@@ -12,7 +12,7 @@ define(['app'], function(app)
                     scope: {
                         ngModel: '='
                     },
-                    templateUrl: 'scripts/grid/grid.html'
+                    templateUrl: 'grid/grid.html'
                 };
             }
         ])
