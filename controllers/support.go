@@ -20,7 +20,7 @@ func (this *SupportController) Prepare() {
 }
 func (this *SupportController) Get() {
 
-	this.LayoutSections["Script"] = "ngApps/1/ngScript.tpl"
+	this.LayoutSections["Script"] = "ngApps/3/ngScript.tpl"
 
 
 	this.Data["Website"] = "beego.me"

@@ -1,0 +1,14 @@
+{
+    "notes":
+    {
+        "url":"templates/notes.html"
+    },
+    "image":
+    {
+        "url":"templates/image.html"
+    },
+    "video":
+    {
+        "url":"templates/video.html"
+    }
+}
