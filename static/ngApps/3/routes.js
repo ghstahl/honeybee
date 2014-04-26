@@ -16,7 +16,9 @@ define([], function()
                 dependencies: [
                     'controllers/HomeViewController',
                     'directives/app-style',
-                    'services/dynTemplateFactory'
+                    'services/dynTemplateFactory',
+                    'directives/app-color',
+                    'directives/app-dynTemplate'
                 ]
             },
             '/about/:person': {

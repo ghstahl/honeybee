@@ -1,4 +1,11 @@
 <section ng-controller="HomeViewController">
     <h1 app-style="italic">{{page.heading}}</h1>
     <p>This is the homepage...</p>
+
+    <ul id="news">
+        <li ng-repeat="item in content">
+            <app-dynTemplate post="item"></app-dynTemplate>
+        </li>
+    </ul>
+
 </section>

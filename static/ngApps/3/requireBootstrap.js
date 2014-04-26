@@ -12,6 +12,7 @@ require.config({
         'angular-route': '/static/angular/angular-1.2.16/angular-route',
         'bootstrap': '/static/bootstrap.3.1.1/js/bootstrap.min',
         'jquery': '/static/js/jquery-2.1.0.min',
+        'restangular': '/static/restangular/dist/restangular',
         'ui-bootstrap-tpls': '/static/angular/ui-bootstrap-tpls-0.10.0.min'
     },
     shim: {
@@ -23,7 +24,11 @@ require.config({
                 'angular-cookies',
                 'angular-animate',
                 'ui-bootstrap-tpls',
-                'bootstrap']
+                'bootstrap',
+                'restangular']
+        },
+        'restangular': {
+            deps: ['angular']
         },
         'angular-route': {
             deps: ['angular']

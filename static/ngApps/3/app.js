@@ -5,6 +5,7 @@ define(['routes','services/dependencyResolverFor'], function(config, dependencyR
 {
     var app = angular.module('app', ['ngRoute','ui.bootstrap','ngResource']);
 
+    app.baseUrl = '/static/ngApps/3/';
     app.config(
         [
             '$routeProvider',

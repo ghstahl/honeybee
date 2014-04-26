@@ -6,14 +6,26 @@ define(['app'], function(app)
     app.controller('HomeViewController',
         [
             '$scope',
+            '$http',
             'DynTemplateFactory',
 
-            function($scope,DynTemplateFactory)
+            function($scope,$http,DynTemplateFactory)
             {
                 $scope.page =
                 {
                     heading: '3 Welcome'
                 };
+                $scope.url = '/static/ngApps/3/content.json';
+                $scope.content = [];
+
+                $scope.fetchContent = function() {
+                    $http.get($scope.url).then(function(result){
+                        $scope.content = result.data;
+                    });
+                }
+
+                $scope.fetchContent();
+
                 $scope.templates = DynTemplateFactory.query();
             }
         ]);
