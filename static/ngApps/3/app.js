@@ -3,9 +3,19 @@
  */
 define(['routes','services/dependencyResolverFor'], function(config, dependencyResolverFor)
 {
-    var app = angular.module('app', ['ngRoute','ui.bootstrap','ngResource']);
+    var app = angular.module('app',
+        [
+            'ngRoute',
+            'ui.bootstrap',
+            'ngResource',
+            'chieffancypants.loadingBar',
+            'ngAnimate',
+            'restangular'
+        ]);
 
-    app.baseUrl = '/static/ngApps/3/';
+    app.appGlobal = {
+        baseUrl:'/static/ngApps/3/'
+    };
     app.config(
         [
             '$routeProvider',
@@ -14,6 +24,7 @@ define(['routes','services/dependencyResolverFor'], function(config, dependencyR
             '$compileProvider',
             '$filterProvider',
             '$provide',
+
 
             function($routeProvider, $locationProvider, $controllerProvider, $compileProvider, $filterProvider, $provide)
             {

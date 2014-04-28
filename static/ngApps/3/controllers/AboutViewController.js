@@ -9,6 +9,8 @@ define(['app'], function(app)
 
             function($scope)
             {
+                $scope.appGlobal = app.appGlobal;
+
                 $scope.page =
                 {
                     heading: '3 About Us'

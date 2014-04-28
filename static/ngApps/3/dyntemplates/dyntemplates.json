@@ -10,5 +10,17 @@
     "video":
     {
         "url":"templates/video.html"
+    },
+    "accountInformation":
+    {
+        "url":"templates/accountInformation.html"
+    },
+    "billingInformation":
+    {
+        "url":"templates/billingInformation.html"
+    },
+    "passwordInformation":
+    {
+        "url":"templates/passwordInformation.html"
     }
 }

@@ -4,28 +4,37 @@
 require.config({
     baseUrl: '/static/ngApps/3',
     paths: {
-        'angular': '/static/angular/angular-1.2.16/angular',
-        'angular-resource': '/static/angular/angular-1.2.16/angular-resource',
-        'angular-cookies': '/static/angular/angular-1.2.16/angular-cookies',
-        'angular-touch': '/static/angular/angular-1.2.16/angular-touch',
-        'angular-animate': '/static/angular/angular-1.2.16/angular-animate',
-        'angular-route': '/static/angular/angular-1.2.16/angular-route',
-        'bootstrap': '/static/bootstrap.3.1.1/js/bootstrap.min',
-        'jquery': '/static/js/jquery-2.1.0.min',
-        'restangular': '/static/restangular/dist/restangular',
-        'ui-bootstrap-tpls': '/static/angular/ui-bootstrap-tpls-0.10.0.min'
+        'angular': '/bower_components/angular/angular',
+        'angular-resource': '/bower_components/angular-resource/angular-resource',
+        'angular-cookies': '/bower_components/angular-cookies/angular-cookies',
+        'angular-touch': '/bower_components/angular-touch/angular-touch',
+        'angular-animate': '/bower_components/angular-animate/angular-animate',
+        'angular-route': '/bower_components/angular-route/angular-route',
+        'bootstrap': '/bower_components/bootstrap/dist/js/bootstrap.min',
+        'jquery': '/bower_components/jquery/dist/jquery.min',
+        'restangular': '/bower_components/restangular/dist/restangular',
+        'angular-loading-bar': '/bower_components/angular-loading-bar/build/loading-bar',
+        'angular-bootstrap': '/bower_components/angular-bootstrap/ui-bootstrap-tpls.min',
+        'underscore':'//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min'
     },
     shim: {
         'app': {
-            deps: ['angular',
+            deps: [
+                'angular',
                 'angular-route',
+                'angular-loading-bar',
                 'angular-resource',
                 'angular-touch',
                 'angular-cookies',
                 'angular-animate',
-                'ui-bootstrap-tpls',
+                'angular-bootstrap',
                 'bootstrap',
-                'restangular']
+                'restangular',
+                'underscore'
+            ]
+        },
+        'angular-loading-bar': {
+            deps: ['angular']
         },
         'restangular': {
             deps: ['angular']
@@ -45,7 +54,7 @@ require.config({
         'angular-animate': {
             deps: ['angular']
         },
-        'ui-bootstrap-tpls': {
+        'angular-bootstrap': {
             deps: ['angular']
         },
         'bootstrap': {

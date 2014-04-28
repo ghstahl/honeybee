@@ -26,6 +26,7 @@ define([], function()
                 dependencies: [
                     'controllers/AboutViewController',
                     'directives/app-color'
+
                 ]
             },
             '/contact': {
@@ -33,7 +34,11 @@ define([], function()
                 dependencies: [
                     'controllers/ContactViewController',
                     'directives/app-color',
-                    'directives/app-style'
+                    'directives/app-style',
+                    'services/accountManagementFactory',
+                    'services/dynTemplateFactory',
+                    'directives/app-dynTemplate'
+
                 ]
             }
         }

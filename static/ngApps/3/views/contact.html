@@ -1,4 +1,24 @@
 <section ng-controller="ContactViewController">
+    <div class="my-super-awesome-loading-box" ng-show="loadingTracker.active()">
+        Loading...
+    </div>
+
     <h1 app-color="green" app-style="italic">{{page.heading}}</h1>
     <p>This is the contact us page</p>
+    <label class="checkbox">
+        <input type="checkbox" ng-model="oneAtATime">
+        Open only one at a time
+    </label>
+
+    <accordion close-others="oneAtATime" >
+
+        <accordion-group heading="Static Header, initially expanded" is-open="true">
+            This content is straight in the template.
+        </accordion-group>
+
+        <accordion-group heading={{item.title}} ng-repeat="item in content" is-open="true">
+            <app-dynTemplate content="item"></app-dynTemplate>
+        </accordion-group>
+
+    </accordion>
 </section>

@@ -7,10 +7,11 @@ define(['app'], function(app)
         [
             '$scope',
             '$http',
-            'DynTemplateFactory',
 
-            function($scope,$http,DynTemplateFactory)
+            function($scope,$http)
             {
+                $scope.appGlobal = app.appGlobal;
+
                 $scope.page =
                 {
                     heading: '3 Welcome'
@@ -23,10 +24,7 @@ define(['app'], function(app)
                         $scope.content = result.data;
                     });
                 }
-
                 $scope.fetchContent();
-
-                $scope.templates = DynTemplateFactory.query();
             }
         ]);
 });

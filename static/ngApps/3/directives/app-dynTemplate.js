@@ -9,17 +9,11 @@ define(['app'], function(app)
         function($compile, $http, $templateCache,DynTemplateFactory) {
             var myMap = DynTemplateFactory.query();
             var getTemplate = function (contentType) {
-                var templateLoader,
-                    baseUrl = '/static/ngApps/3/',
-                    templateMap = {
-                        notes: 'notes.html',
-                        image: 'image.html',
-                        video: 'video.html'
-                    };
+                var templateLoader;
 
                 console.log('myMap['+contentType+']');
                 console.log(myMap[contentType]);
-                var templateUrl = app.baseUrl + myMap[contentType].url;
+                var templateUrl = app.appGlobal.baseUrl + myMap[contentType].url;
                 console.log('templateUrl:'+templateUrl);
                 console.log(templateUrl);
 
@@ -30,8 +24,8 @@ define(['app'], function(app)
             }
 
             var linker = function (scope, element, attrs) {
-                scope.rootDirectory = app.baseUrl +'images/';
-                var loader = getTemplate(scope.post.content_type);
+                scope.appGlobal = app.appGlobal;
+                var loader = getTemplate(scope.content.content_type);
 
                 var promise = loader.success(function (html) {
                     element.html(html);
@@ -43,7 +37,7 @@ define(['app'], function(app)
             return {
                 restrict: 'E',
                 scope: {
-                    post: '='
+                    content: '='
                 },
                 link: linker
             };
