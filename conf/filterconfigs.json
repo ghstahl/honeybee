@@ -10,6 +10,16 @@
             "struct": "AuthFilterType",
             "pattern": "/support/*.*",
             "position": "beego.AfterStatic"
+        },
+        {
+            "struct": "AuthApiFilterType",
+            "pattern": "/supportapi/*.*",
+            "position": "beego.AfterStatic"
+        },
+        {
+            "struct": "AuthApiFilterType",
+            "pattern": "/accountapi/*.*",
+            "position": "beego.AfterStatic"
         }
     ]
 }

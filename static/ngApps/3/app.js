@@ -26,7 +26,12 @@ define(['routes','services/dependencyResolverFor'], function(config, dependencyR
             '$provide',
 
 
-            function($routeProvider, $locationProvider, $controllerProvider, $compileProvider, $filterProvider, $provide)
+            function($routeProvider,
+                     $locationProvider,
+                     $controllerProvider,
+                     $compileProvider,
+                     $filterProvider,
+                     $provide)
             {
                 app.controller = $controllerProvider.register;
                 app.directive  = $compileProvider.directive;

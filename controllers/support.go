@@ -21,6 +21,7 @@ func (this *SupportController) Prepare() {
 func (this *SupportController) Get() {
 
 	this.LayoutSections["Script"] = "ngApps/3/ngScript.tpl"
+	this.LayoutSections["HtmlHead"] = "ngApps/3/ngHtmlHead.tpl"
 
 
 	this.Data["Website"] = "beego.me"
