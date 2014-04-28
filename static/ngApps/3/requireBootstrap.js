@@ -15,7 +15,7 @@ require.config({
         'restangular': '/bower_components/restangular/dist/restangular',
         'angular-loading-bar': '/bower_components/angular-loading-bar/build/loading-bar',
         'angular-bootstrap': '/bower_components/angular-bootstrap/ui-bootstrap-tpls.min',
-        'underscore':'//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min'
+        'underscore':'/bower_components/underscore/underscore'
     },
     shim: {
         'app': {
@@ -37,7 +37,7 @@ require.config({
             deps: ['angular']
         },
         'restangular': {
-            deps: ['angular']
+            deps: ['angular','underscore']
         },
         'angular-route': {
             deps: ['angular']
