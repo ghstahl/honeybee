@@ -35,8 +35,12 @@ define([], function()
                     'controllers/ContactViewController',
                     'directives/app-color',
                     'directives/app-style',
+                    'directives/form/dyn-fieldDirective',
+                    'directives/form/dyn-formDirective',
                     'services/accountManagementFactory',
                     'services/dynTemplateFactory',
+                    'services/dynFormFactory',
+                    'services/form-service',
                     'directives/app-dynTemplate'
 
                 ]

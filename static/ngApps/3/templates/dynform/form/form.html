@@ -1,13 +1,12 @@
-<div class="entry-text">
-    <div class="entry-title">{{content.title}}</div>
-    <div class="entry-copy">{{content.data}}</div>
-</div>
-<h2>{{ content.form.form_name }}</h2>
+<h2>{{ form.form_name }}</h2>
 
 <div ng-show="!form.submitted">
-
+    <div class="field row">
+        <div class="span2">Form ID:</div>
+        <div class="span4">{{ form.form_id }}</div>
+    </div>
     <form name="myForm" id="myForm">
-        <div ng-repeat="field in content.form.form_fields">
+        <div ng-repeat="field in form.form_fields">
             <field-directive field="field">
 
             </field-directive>
@@ -25,9 +24,8 @@
 
 <div ng-show="form.submitted">
     <h3>Submitted Data</h3>
-    <div ng-repeat="field in content.form.form_fields">
+    <div ng-repeat="field in form.form_fields">
         Field Title: {{ field.field_title }} <br>
         Field Value: {{ field.field_value }} <br><br>
     </div>
 </div>
-

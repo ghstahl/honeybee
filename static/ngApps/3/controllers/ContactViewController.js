@@ -5,12 +5,24 @@ define(['app'], function(app)
 {
     app.controller('ContactViewController',
         [
-            '$scope', '$http','Restangular','AccountManagementFactory',
-            function($scope,$http,Restangular,AccountManagementFactory)
+            '$scope',
+            '$http',
+            '$routeParams',
+            'Restangular',
+            'AccountManagementFactory',
+            'DynFormFactory',
+            function(
+                $scope,
+                $http,
+                $routeParams,
+                Restangular,
+                AccountManagementFactory,
+                DynFormFactory
+                )
             {
                 $scope.appGlobal = app.appGlobal;
                 $scope.content = AccountManagementFactory.query();
-
+                $scope.form = DynFormFactory.query();
                 $scope.page =
                 {
                     heading: ' 3 Contact Us'
@@ -18,6 +30,7 @@ define(['app'], function(app)
                 $scope.oneAtATime = true;
 
                 $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
 
             }
         ]);
