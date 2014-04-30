@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
-	_ "honeybee/routers"
+	_ "github.com/ghstahl/honeybee/routers"
 		
 	"github.com/astaxie/beego"
 	. "github.com/smartystreets/goconvey/convey"

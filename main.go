@@ -1,8 +1,8 @@
 package main
 
 import (
-	_ "honeybee/routers"
-	"honeybee/beegoapp"
+	_ "github.com/ghstahl/honeybee/routers"
+	"github.com/ghstahl/honeybee/beegoapp"
 )
 
 func main() {

@@ -3,7 +3,7 @@ package controllers
 import (
 	"encoding/json"
 	"github.com/astaxie/beego"
-	"honeybee/models"
+	"github.com/ghstahl/honeybee/models"
 )
 
 type ObjectController struct {

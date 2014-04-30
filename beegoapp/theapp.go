@@ -1,7 +1,7 @@
 package beegoapp
 
 import (
-	_ "honeybee/filters"
+	_ "github.com/ghstahl/honeybee/filters"
 	"github.com/bradrydzewski/go.auth"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/config"
@@ -9,7 +9,7 @@ import (
 	"fmt"
 //	"honeybee/filters"
 	"github.com/ghstahl/pingbeego/filters"
-	"honeybee/auth/openid"
+	"github.com/ghstahl/honeybee/auth/openid"
 
 )
 

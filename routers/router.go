@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"honeybee/controllers"
+	"github.com/ghstahl/honeybee/controllers"
 	"github.com/astaxie/beego"
 )
 

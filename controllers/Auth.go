@@ -4,7 +4,7 @@ import (
 
 	"github.com/astaxie/beego"
 	"github.com/bradrydzewski/go.auth"
-	"honeybee/beegoapp"
+	"github.com/ghstahl/honeybee/beegoapp"
 	"net/http"
 	"fmt"
 )
