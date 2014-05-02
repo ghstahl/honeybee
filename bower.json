@@ -23,8 +23,9 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.16",
-    "angular-route": "~1.2.16",
+      "angular": "~1.2.16",
+      "angular-route": "~1.2.16",
+      "angular-ui-router": "~0.2.10",
       "angular-resource": "~1.2.16",
       "angular-touch": "~1.2.16",
       "angular-cookies": "~1.2.16",
@@ -32,10 +33,10 @@
       "angular-ui":"~0.4.0",
       "angular-bootstrap":"~0.10.0",
       "angular-loading-bar":"~0.4.0",
-
-    "requirejs": "~2.1.11",
-    "angular-promise-tracker":"~2.0.0",
-    "bootstrap":"~3.1.1",
+      "angular-couch-potato":"~0.1.1",
+      "requirejs": "~2.1.11",
+      "angular-promise-tracker":"~2.0.0",
+      "bootstrap":"~3.1.1",
       "jquery":"~2.1.0",
       "restangular":"~1.4.0",
       "underscore":"~1.6.0"
