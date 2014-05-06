@@ -22,12 +22,16 @@ go get github.com/ghstahl/pingbeego
 
 
 bower install
+
 bee run
 
 
 note: if something is missing code wise then 
+
 Bower install  ... it
+
 or
+
 go get  ... it
 
 but I think I have everything in my Bower json
