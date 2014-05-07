@@ -1,19 +1,15 @@
 define(['app'], function(app)
 {
-    app.directive('appDyntemplate',
+    app.registerDirective('appDyntemplate',
     [
         '$compile',
         '$http',
         '$templateCache',
-        'DynTemplateFactory',
-        function($compile, $http, $templateCache,DynTemplateFactory) {
-            var myMap = DynTemplateFactory.query();
-            var getTemplate = function (contentType) {
+        function($compile, $http, $templateCache) {
+            var getTemplate = function (content) {
                 var templateLoader;
 
-                console.log('myMap['+contentType+']');
-                console.log(myMap[contentType]);
-                var templateUrl = app.appGlobal.baseUrl + myMap[contentType].url;
+                var templateUrl = app.appGlobal.baseUrl + content.dynTemplate.url;
                 console.log('templateUrl:'+templateUrl);
                 console.log(templateUrl);
 
@@ -25,7 +21,7 @@ define(['app'], function(app)
 
             var linker = function (scope, element, attrs) {
                 scope.appGlobal = app.appGlobal;
-                var loader = getTemplate(scope.content.content_type);
+                var loader = getTemplate( scope.content);
 
                 var promise = loader.success(function (html) {
                     element.html(html);

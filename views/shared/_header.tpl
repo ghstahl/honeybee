@@ -14,9 +14,14 @@
                 <li class="active">
                     <a href="/twentyfourtyeight/get">2048</a>
                 </li>
-                <li>
-                    <a href="#">Link</a>
-                </li>
+
+                <!-- Here you can see ui-sref in action again. Also notice the use of $state.includes, which
+                     will set the links to 'active' if, for example on the first link, 'contacts' or any of
+                     its descendant states are activated. -->
+                <li ng-class="{ active: $state.includes('contacts') }"><a ui-sref="contacts.list">Contacts</a></li>
+                <li ng-class="{ active: $state.includes('account') }"><a ui-sref="account.list">Account</a></li>
+                <li ng-class="{ active: $state.includes('about') }"><a ui-sref="about">About</a></li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
                     <ul class="dropdown-menu">

@@ -2,7 +2,7 @@
 
 define(['app'], function(app)
 {
-    app.directive('fieldDirective',
+    app.registerDirective('fieldDirective',
     [
         '$http','$compile',
         function ($http, $compile) {

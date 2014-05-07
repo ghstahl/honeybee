@@ -9,7 +9,7 @@
         [[.HtmlHead]]
 	</head>
   	
-  	<body>
+  	<body ng-cloak>
     <div class="container">
         <div class="row clearfix">
 

@@ -2,7 +2,8 @@
  * Created by Herb on 3/25/2014.
  */
 define(['app'], function(app){
-    app.factory('AccountManagementFactory',
+    app.registerFactory(
+        'AccountManagementFactory',
         [
             '$resource',
             function($resource){
@@ -13,3 +14,6 @@ define(['app'], function(app){
             }
         ]);
 });
+
+
+

@@ -3,7 +3,7 @@
  */
 define(['app'], function(app)
 {
-    app.directive('appWeight',
+    app.registerDirective('appWeight',
         [
             function()
             {

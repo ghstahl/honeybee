@@ -1,28 +1,27 @@
 /**
  * Created by Herb on 3/25/2014.
  */
-define(['app'], function(app)
-{
-    app.controller('ContactViewController',
-        [
-            '$scope',
-            '$http',
-            '$routeParams',
-            'Restangular',
-            'AccountManagementFactory',
-            'DynFormFactory',
-            function(
-                $scope,
-                $http,
-                $routeParams,
-                Restangular,
-                AccountManagementFactory,
-                DynFormFactory
-                )
-            {
-                $scope.appGlobal = app.appGlobal;
-                $scope.content = AccountManagementFactory.query();
-                $scope.form = DynFormFactory.query();
+
+
+
+define(['app',
+    'services/accountManagementFactory',
+    'services/dynTemplateFactory',
+    'services/templateProviderFactory',
+    'directives/app-color',
+    'directives/app-style',
+    'directives/app-weight',
+    'directives/app-dynTemplate',
+    'directives/form/dyn-fieldDirective',
+    'directives/form/dyn-formDirective'
+], function (app) {
+    app.registerController(
+        'ContactViewController',
+        [            '$scope', '$stateParams', 'accountManagementConfig','dynTemplateFactoryConfig',
+            function ($scope,   $stateParams,   accountManagementConfig,  dynTemplateFactoryConfig) {
+                $scope.view = 'ContactViewController says hi.. ';
+                $scope.content = [];
+
                 $scope.page =
                 {
                     heading: ' 3 Contact Us'
@@ -31,7 +30,15 @@ define(['app'], function(app)
 
                 $scope.items = ['Item 1', 'Item 2', 'Item 3'];
 
+                $scope.appGlobal = app.appGlobal;
+                $scope.content = accountManagementConfig;
+                $scope.dynTemplates = dynTemplateFactoryConfig;
 
+                $scope.content.forEach(function(entry) {
+                    var rec = $scope.dynTemplates[entry.content_type];
+                    entry.dynTemplate = rec;
+
+                });
             }
         ]);
 });

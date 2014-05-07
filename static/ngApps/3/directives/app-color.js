@@ -3,7 +3,7 @@
  */
 define(['app'], function(app)
 {
-    app.directive('appColor',
+    app.registerDirective('appColor',
         [
             function()
             {

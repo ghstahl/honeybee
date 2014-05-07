@@ -3,7 +3,7 @@
  */
 define(['app'], function(app)
 {
-    app.directive('appStyle',
+    app.registerDirective('appStyle',
         [
             function()
             {

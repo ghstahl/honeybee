@@ -2,13 +2,16 @@
  * Created by Herb on 3/25/2014.
  */
 define(['app'], function(app){
-    app.factory('DynTemplateFactory',
+    app.registerFactory(
+        'DynTemplateFactory',
         [
             '$resource',
             function($resource){
-                return $resource('/static/ngApps/3/dyntemplates/:dyntemplateId.json?', {}, {
+                var url = app.appGlobal.baseUrl + 'dyntemplates/:dyntemplateId.json?';
+                return $resource(url, {}, {
                     query: {method:'GET', params:{dyntemplateId:'dyntemplates'}, isArray:false}
                 });
             }
         ]);
 });
+

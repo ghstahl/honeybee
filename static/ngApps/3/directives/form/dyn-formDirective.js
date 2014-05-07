@@ -2,7 +2,7 @@
 
 define(['app'], function(app)
 {
-    app.directive('formDirective',
+    app.registerDirective('formDirective',
     [
         function() {
             var templateBaseUrl = app.appGlobal.baseUrl + 'templates/dynform/form/';

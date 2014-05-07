@@ -12,12 +12,11 @@ require.config({
         'angular-animate': '/bower_components/angular-animate/angular-animate',
         'angular-route': '/bower_components/angular-route/angular-route',
         'angular-ui-router': '/bower_components/angular-ui-router/release/angular-ui-router',
-        'bootstrap': '/bower_components/bootstrap/dist/js/bootstrap.min',
-        'jquery': '/bower_components/jquery/dist/jquery.min',
         'restangular': '/bower_components/restangular/dist/restangular',
         'angular-loading-bar': '/bower_components/angular-loading-bar/build/loading-bar',
         'angular-bootstrap': '/bower_components/angular-bootstrap/ui-bootstrap-tpls.min',
         'underscore':'/bower_components/underscore/underscore'
+
     },
     shim: {
         'app': {
@@ -32,7 +31,6 @@ require.config({
                 'angular-cookies',
                 'angular-animate',
                 'angular-bootstrap',
-                'bootstrap',
                 'restangular',
                 'underscore'
             ]
@@ -66,10 +64,8 @@ require.config({
         },
         'angular-bootstrap': {
             deps: ['angular']
-        },
-        'bootstrap': {
-            deps: ['jquery']
         }
+
     }
 
 });
@@ -77,10 +73,25 @@ require.config({
 require
 (
     [
-        'app'
+        'app', 'app-init'
     ],
     function(app)
     {
-        angular.bootstrap(document, ['app']);
+//        angular.bootstrap(document, ['app']);
+
+        angular.element(document).ready(function() {
+
+            angular.bootstrap(document, [app['name'], function() {
+
+                // for good measure, put ng-app on the html element
+                // studiously avoiding jQuery because angularjs.org says we shouldn't
+                // use it.  In real life, there are a ton of reasons to use it.
+                // karma likes to have ng-app on the html element when using requirejs.
+                angular.element(document).find('html').addClass('ng-app');
+
+            }]);
+
+        });
     }
 );
+
