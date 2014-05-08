@@ -113,6 +113,23 @@ define([
                 return $timeout(function () { return 'Hello world'; }, 1000);
               }]
           })
+
+
+
+            .state('accountmanagement', {
+                url: '/accountmanagement',
+                controller: 'MyAccountViewController',
+                templateUrl: app.appGlobal.baseUrl +  'views/accountManagement.html',
+                resolve: {
+                    dummy: $couchPotatoProvider.resolveDependencies([
+                        'controllers/MyAccountViewController'
+                    ]),
+                    myAccountBoxNavConfig:function(dummy,MyAccountBoxNavFactory) { // Inject a resource named 'Gists'
+                        return MyAccountBoxNavFactory.query().$promise;
+                    }
+                }
+            })
+
             .state('account', {
                 url: '/account',
                 abstract:true,

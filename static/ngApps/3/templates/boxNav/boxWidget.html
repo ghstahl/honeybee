@@ -1,0 +1,21 @@
+<!-- Boxes de Acoes -->
+
+<div class="col-xs-12 col-sm-6 col-lg-4">
+    <div class="box">
+        <div class="icon">
+            <div class="image"><i class="fa {{field.fa_icon}}"></i></div>
+            <div class="info">
+                <h3 class="title">{{field.title}}</h3>
+                <p>
+                    {{field.description}}
+                </p>
+                <div class="more" ng-class="{ active: $state.includes('account') }">
+                    <a ui-sref="{{field.ui_sref}}">
+                        {{field.ui_sref_short_cut}} <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="space"></div>
+    </div>
+</div>

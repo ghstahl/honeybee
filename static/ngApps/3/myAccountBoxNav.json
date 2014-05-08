@@ -1,0 +1,50 @@
+[
+    {
+        "title" : "Product Detail",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "fa_icon" : "fa-suitcase",
+        "ui_sref" : "account.list",
+        "ui_sref_short_cut":"Read More",
+        "ng_class_sate_includes":"{ active: $state.includes('account') }"
+    },
+    {
+        "title" : "Automatic Renewal and Subscriptions",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "fa_icon" : "fa-retweet",
+        "ui_sref" : "account.list",
+        "ui_sref_short_cut":"Read More",
+        "ng_class_sate_includes":"{ active: $state.includes('account') }"
+    },
+    {
+        "title" : "Account Information",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "fa_icon" : "fa-user",
+        "ui_sref" : "account.list",
+        "ui_sref_short_cut":"Read More",
+        "ng_class_sate_includes":"{ active: $state.includes('account') }"
+    },
+    {
+        "title" : "Billing Information",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "fa_icon" : "fa-credit-card",
+        "ui_sref" : "account.list",
+        "ui_sref_short_cut":"Read More",
+        "ng_class_sate_includes":"{ active: $state.includes('account') }"
+    },
+    {
+        "title" : "Email Preferences",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "fa_icon" : "fa-cogs",
+        "ui_sref" : "account.list",
+        "ui_sref_short_cut":"Read More",
+        "ng_class_sate_includes":"{ active: $state.includes('account') }"
+    },
+    {
+        "title" : "Order History",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "fa_icon" : "fa-list",
+        "ui_sref" : "account.list",
+        "ui_sref_short_cut":"Read More",
+        "ng_class_sate_includes":"{ active: $state.includes('account') }"
+    }
+]
