@@ -1,10 +1,9 @@
 <div class="form-group float-label-control">
-    <label for="">{{field.field_title}}</label>
+    <dyn-label  field="field"></dyn-label>
     <input type="email"
            placeholder="Email"
            class="form-control"
            value="{{field.field_value}}"
            ng-model="field.field_value"
            ng-required="field.field_required"/>
-    <span class="required-error" ng-show="field.field_required && !field.field_value">* required</span>
 </div>

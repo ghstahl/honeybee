@@ -1,5 +1,5 @@
 <div class="form-group float-label-control">
-    <label for="">{{field.field_title}}</label>
+    <dyn-label  field="field"></dyn-label>
     <div class="control-group input-append">
         <input type="text"
                class="form-control"
@@ -7,5 +7,4 @@
         <button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i></button>
     </div>
 
-    <span class="required-error" ng-show="field.field_required && !field.field_value">* required</span>
 </div>

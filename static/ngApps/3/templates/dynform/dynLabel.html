@@ -1,0 +1,8 @@
+<div ng-class="(field.field_required && !field.field_value)|switch:{'false':'',
+ 'true':'alert-danger'}">
+    <label for="">{{field.field_title}}
+        <span  ng-show="field.field_required && !field.field_value"> (* required)</span>
+    </label>
+</div>
+
+

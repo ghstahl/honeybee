@@ -8,10 +8,12 @@ define(['app',
     'services/accountManagementFactory',
     'services/dynTemplateFactory',
     'services/templateProviderFactory',
+    'filters/style-switch',
     'directives/app-color',
     'directives/app-style',
     'directives/app-weight',
     'directives/app-dynTemplate',
+    'directives/form/dyn-labelDirective',
     'directives/form/dyn-fieldDirective',
     'directives/form/dyn-formDirective'
 ], function (app) {

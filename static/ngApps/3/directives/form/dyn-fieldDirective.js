@@ -13,6 +13,9 @@ define(['app'], function(app)
                 var templateUrl = '';
 
                 switch(type) {
+                    case 'separatorfield':
+                        templateUrl = 'separatorfield.html';
+                        break;
                     case 'textfield':
                         templateUrl = 'textfield.html';
                         break;

@@ -1,9 +1,7 @@
 <div class="form-group float-label-control">
-    <label for="">{{field.field_title}}</label>
-
+    <dyn-label  field="field"></dyn-label>
     <select class="form-control"
             ng-model="field.field_value"
             ng-options="option.option_id as option.option_title for option in field.field_options"
             sng-required="field.field_required"></select>
-    <span class="required-error" ng-show="field.field_required && !field.field_value">* required</span>
-</div>
+ </div>

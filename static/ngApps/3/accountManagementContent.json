@@ -20,6 +20,10 @@
                     "field_value" : "Doe",
                     "field_required" : true
                 },
+                "2.1" : {
+                    "field_id" : 2.1,
+                    "field_type" : "separatorfield"
+                },
                 "3" : {
                     "field_id" : 3,
                     "field_title" : "Gender",
