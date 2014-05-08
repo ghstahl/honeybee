@@ -62,14 +62,8 @@
                     "field_id" : 6,
                     "field_title" : "I accept the terms and conditions.",
                     "field_type" : "checkbox",
-                    "field_value" : false,
-                    "field_required" : true,
-                    "name":"multi checkboxes",
-                    "value":"",
-                    "required":true,
-                    "options":[
-                        {"value":"I accept the terms and conditions."}
-                    ]
+                    "field_value" : "0",
+                    "field_required" : true
                 },
                 "7" : {
                     "field_id" : 7,
@@ -183,14 +177,8 @@
                     "field_id" : 9,
                     "field_title" : "I accept the terms and conditions.",
                     "field_type" : "checkbox",
-                    "field_value" : false,
-                    "field_required" : true,
-                    "name":"multi checkboxes",
-                    "value":"",
-                    "required":true,
-                    "options":[
-                        {"value":"I accept the terms and conditions."}
-                    ]
+                    "field_value" : "0",
+                    "field_required" : true
                 },
                 "10" : {
                     "field_id" : 10,
