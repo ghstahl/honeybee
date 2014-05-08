@@ -1,34 +1,47 @@
-<div class="entry-text">
-    <div class="entry-title">{{content.title}}</div>
-    <div class="entry-copy">{{content.data}}</div>
-</div>
-<h2>{{ content.form.form_name }}</h2>
+<div class="container">
 
-        {{content}}
-<div ng-show="!form.submitted">
+    <div class="row">
+        <div class="row">
+            <div class="col-sm-8">
+               <!--
+               <h4 class="page-header">{{ content.title }}</h4>
+                -->
+                <div ng-show="!form.submitted">
 
-    <form name="myForm" id="myForm">
-        <div ng-repeat="field in content.form.form_fields">
-            <field-directive field="field">
+                    <form role="form" name="myForm" id="myForm">
+                        <div ng-repeat="field in content.form.form_fields">
+                            <field-directive field="field">
 
-            </field-directive>
+                            </field-directive>
+                        </div>
+                    </form>
+                    <div class="form-actions">
+                        <p class="text-center">
+                            <button class="btn btn-success right" type="button" ng-disabled="!myForm.$valid" ng-click="submit()"><i class="icon-edit icon-white"></i> Submit Form</button>
+                            <button class="btn btn-danger right" type="button" ng-click="cancel()"><i class="icon-remove icon-white"></i> Cancel</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
-
-
-    <div class="form-actions">
-        <p class="text-center">
-            <button class="btn btn-success right" type="button" ng-disabled="!myForm.$valid" ng-click="submit()"><i class="icon-edit icon-white"></i> Submit Form</button>
-            <button class="btn btn-danger right" type="button" ng-click="cancel()"><i class="icon-remove icon-white"></i> Cancel</button>
-        </p>
     </div>
-</div>
-
-<div ng-show="form.submitted">
-    <h3>Submitted Data</h3>
+    Cancel: {{ cancel }} <br>
+    <button ng-click="cancel()">
+        Increment
+    </button>
     <div ng-repeat="field in content.form.form_fields">
         Field Title: {{ field.field_title }} <br>
         Field Value: {{ field.field_value }} <br><br>
+    </div>
+
+
+
+    <div ng-show="form.submitted">
+        <h3>Submitted Data</h3>
+        <div ng-repeat="field in content.form.form_fields">
+            Field Title: {{ field.field_title }} <br>
+            Field Value: {{ field.field_value }} <br><br>
+        </div>
     </div>
 </div>
 

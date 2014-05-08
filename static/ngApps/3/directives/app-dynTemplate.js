@@ -6,6 +6,24 @@ define(['app'], function(app)
         '$http',
         '$templateCache',
         function($compile, $http, $templateCache) {
+
+            // I am the controller for this directive.
+            var controllerfunc = function( $scope, $element, $attrs ) {
+
+                $scope.submit = function(){
+                    alert('Form submitted..');
+                    $scope.form.submitted = true;
+                }
+
+                $scope.cancel = function(){
+                    alert('Form canceled..');
+                }
+
+                this.id = "bnOne";
+
+            }
+
+
             var getTemplate = function (content) {
                 var templateLoader;
 
@@ -19,14 +37,14 @@ define(['app'], function(app)
 
             }
 
-            var linker = function (scope, element, attrs) {
+            var linker = function (scope, element, attrs,controllersArr) {
                 scope.appGlobal = app.appGlobal;
                 var loader = getTemplate( scope.content);
 
                 var promise = loader.success(function (html) {
                     element.html(html);
                 }).then(function (response) {
-                    element.replaceWith($compile(element.html())(scope));
+                    element.replaceWith($compile(element.contents())(scope));
                 });
             }
 
@@ -35,7 +53,8 @@ define(['app'], function(app)
                 scope: {
                     content: '='
                 },
-                link: linker
+                link: linker,
+                controller: controllerfunc
             };
         }])
 });

@@ -1,10 +1,73 @@
 [
     {
-        "content_type" : "accountInformation",
+        "content_type" : "billingInformation",
         "title" : "Account Information",
         "data" : "images/temp-photo.jpg",
         "form":{
-            "form_name" : "accountInformation Form"
+            "form_name" : "accountInformation Form",
+            "form_fields" : {
+                "1" : {
+                    "field_id" : 1,
+                    "field_title" : "First Name",
+                    "field_type" : "textfield",
+                    "field_value" : "John",
+                    "field_required" : true
+                },
+                "2" : {
+                    "field_id" : 2,
+                    "field_title" : "Last Name",
+                    "field_type" : "textfield",
+                    "field_value" : "Doe",
+                    "field_required" : true
+                },
+                "3" : {
+                    "field_id" : 3,
+                    "field_title" : "Gender",
+                    "field_type" : "radio",
+                    "field_value" : "2",
+                    "field_required" : true,
+                    "field_options" : [
+                        {
+                            "option_id" : 1,
+                            "option_title" : "Male",
+                            "option_value" : 1
+                        },
+                        {
+                            "option_id" : 2,
+                            "option_title" : "Female",
+                            "option_value" : 2
+                        }
+                    ]
+                },
+                "4" : {
+                    "field_id" : 4,
+                    "field_title" : "Email Address",
+                    "field_type" : "email",
+                    "field_value" : "test@example.com",
+                    "field_required" : true
+                },
+                "5" : {
+                    "field_id" : 5,
+                    "field_title" : "Password",
+                    "field_type" : "password",
+                    "field_value" : "",
+                    "field_required" : true
+                },
+                "6" : {
+                    "field_id" : 6,
+                    "field_title" : "I accept the terms and conditions.",
+                    "field_type" : "checkbox",
+                    "field_value" : "0",
+                    "field_required" : true
+                },
+                "7" : {
+                    "field_id" : 7,
+                    "field_title" : "I have a secret.",
+                    "field_type" : "hidden",
+                    "field_value" : "X",
+                    "field_required" : false
+                }
+            }
         }
     },
     {

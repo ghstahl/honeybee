@@ -1,16 +1,5 @@
 define([
     'app'
-    /*,
-    'services/accountManagementFactory',
-    'services/dynTemplateFactory',
-    'services/templateProviderFactory',
-    'directives/app-color',
-    'directives/app-style',
-    'directives/app-weight',
-    'directives/app-dynTemplate',
-    'directives/form/dyn-fieldDirective',
-    'directives/form/dyn-formDirective'
-    */
 ], function(app) {
   app.registerProvider(
     'routeDefs',

@@ -1,5 +1,15 @@
-<br>
-<input  ng-model="field.field_value" id="{{field.field_id}}" type="checkbox" ng-true-value="1" ng-false-value="0" ng-required="field.field_required"/>
-<label class="form-field-label" for="{{field.field_id}}">{{field.field_title}}</label>
-<span class="required-error" ng-show="field.field_required && field.field_value == 0">(* required)</span>
+<div class="form-group float-label-control">
+
+    <!-- CUSTOM VALUE CHECKBOXES -->
+    <label>Personal Question</label>
+    <div class="checkbox">
+
+        {{field.field_title}} <input type="checkbox" ng-model="field.field_value"
+                       ng-true-value="1" ng-false-value="0">
+        <span class="required-error" ng-show="field.field_required && field.field_value === '0'">(* required)</span>
+    </div>
+
+
+</div>
+
 

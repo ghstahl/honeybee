@@ -39,6 +39,15 @@ define(['app',
                     entry.dynTemplate = rec;
 
                 });
+                $scope.submit = function(){
+                    alert('Form submitted..');
+                    $scope.form.submitted = true;
+                }
+
+                $scope.cancel = function(){
+                    alert('Form canceled..');
+                }
+
             }
         ]);
 });
