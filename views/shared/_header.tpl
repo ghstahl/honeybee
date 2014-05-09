@@ -20,7 +20,7 @@
                      its descendant states are activated. -->
                 <li ng-class="{ active: $state.includes('contacts') }"><a ui-sref="contacts.list">Contacts</a></li>
                 <li ng-class="{ active: $state.includes('account') }"><a ui-sref="account.list">Account</a></li>
-                <li ng-class="{ active: $state.includes('about') }"><a ui-sref="about">About</a></li>
+                <li ng-class="{ active: $state.includes('about') }"><a ui-sref="about.list">About</a></li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>

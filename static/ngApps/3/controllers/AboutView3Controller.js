@@ -8,7 +8,7 @@ define([
         'directives/app-weight'
     ], function(app)
 {
-    app.registerController('AboutViewController',
+    app.registerController('AboutView3Controller',
         [
             '$scope',
 
@@ -18,7 +18,7 @@ define([
 
                 $scope.page =
                 {
-                    heading: '3 About Us'
+                    heading: 'View3'
                 };
             }
         ]);

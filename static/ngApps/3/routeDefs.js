@@ -105,8 +105,10 @@ define([
               }
             }
           })
-          .state('about', {
-            url: '/about',
+
+
+          .state('about2', {
+            url: '/about2',
             templateProvider:
               [        '$timeout',
               function ($timeout) {
@@ -114,6 +116,30 @@ define([
               }]
           })
 
+              .state('about4', {
+                url: '/about',
+//                templateUrl: app.appGlobal.baseUrl +  'views/about.html',
+                controller:'AboutViewController',
+                resolve: {
+                    dummy: $couchPotatoProvider.resolveDependencies([
+                        'controllers/AboutViewController'
+                    ]),
+                    myAccountBoxNavConfig:function(dummy) { // Inject a resource named 'Gists'
+                        return {};
+                    }
+                },
+                views:{
+                    view1:{
+                        templateUrl: app.appGlobal.baseUrl +  'templates/view.about.1.html'
+                    },
+                    view2:{
+                        templateUrl: app.appGlobal.baseUrl +  'templates/view.about.2.html'
+                    },
+                    view3:{
+                        templateUrl: app.appGlobal.baseUrl +  'templates/view.about.3.html'
+                    }
+                }
+              })
 
 
             .state('accountmanagement', {
@@ -126,6 +152,50 @@ define([
                     ]),
                     myAccountBoxNavConfig:function(dummy,MyAccountBoxNavFactory) { // Inject a resource named 'Gists'
                         return MyAccountBoxNavFactory.query().$promise;
+                    }
+                }
+            })
+            .state('about', {
+                url: '/about',
+                abstract:true,
+                templateUrl: app.appGlobal.baseUrl +  'views/about.html',
+                controller: 'AboutViewController',
+                resolve: {
+                    dummy: $couchPotatoProvider.resolveDependencies([
+                        'controllers/AboutViewController'
+                    ])
+                }
+            })
+            .state('about.list', {
+                // parent: 'contacts',
+                url: '/',
+                views: {
+                    "view1": {
+                        templateUrl: app.appGlobal.baseUrl +  'templates/view.about.1.html',
+                        controller:'AboutView1Controller',
+                        resolve: {
+                            dummy: $couchPotatoProvider.resolveDependencies([
+                                'controllers/AboutView1Controller'
+                            ])
+                        }
+                    },
+                    "view2": {
+                        templateUrl: app.appGlobal.baseUrl +  'templates/view.about.2.html',
+                        controller:'AboutView2Controller',
+                        resolve: {
+                            dummy: $couchPotatoProvider.resolveDependencies([
+                                'controllers/AboutView2Controller'
+                            ])
+                        }
+                    },
+                    "view3": {
+                        templateUrl: app.appGlobal.baseUrl +  'templates/view.about.3.html',
+                        controller:'AboutView3Controller',
+                        resolve: {
+                            dummy: $couchPotatoProvider.resolveDependencies([
+                                'controllers/AboutView3Controller'
+                            ])
+                        }
                     }
                 }
             })
