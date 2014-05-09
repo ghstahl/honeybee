@@ -155,6 +155,44 @@ define([
                     }
                 }
             })
+            .state('billinginformation', {
+                url: '/billinginformation',
+                controller: 'BillingInformationViewController',
+                templateUrl: app.appGlobal.baseUrl +  'views/accountInformation.html',
+                resolve: {
+                    dummy: $couchPotatoProvider.resolveDependencies([
+                        'controllers/BillingInformationViewController'
+                    ]),
+                    accountManagementConfig:function(dummy,AccountManagementFactory) { // Inject a resource named 'Gists'
+                        return AccountManagementFactory.query().$promise;
+                    },
+                    formId:function(dummy){
+                        return "{9103f441-e98c-476b-a622-10cdc83d2288}"
+                    },
+                    dynTemplateFactoryConfig:function(dummy,DynTemplateFactory){
+                        return DynTemplateFactory.query().$promise;
+                    }
+                }
+            })
+            .state('accountinformation', {
+                url: '/accountinformation',
+                controller: 'AccountInformationViewController',
+                templateUrl: app.appGlobal.baseUrl +  'views/accountInformation.html',
+                resolve: {
+                    dummy: $couchPotatoProvider.resolveDependencies([
+                        'controllers/AccountInformationViewController'
+                    ]),
+                    accountManagementConfig:function(dummy,AccountManagementFactory) { // Inject a resource named 'Gists'
+                        return AccountManagementFactory.query().$promise;
+                    },
+                    formId:function(dummy){
+                        return "{872c69a3-7349-48d3-9c45-6f26ddca575c}"
+                    },
+                    dynTemplateFactoryConfig:function(dummy,DynTemplateFactory){
+                        return DynTemplateFactory.query().$promise;
+                    }
+                }
+            })
             .state('about', {
                 url: '/about',
                 abstract:true,

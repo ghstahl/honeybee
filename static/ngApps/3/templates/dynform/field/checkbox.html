@@ -1,19 +1,13 @@
 <div class="form-group float-label-control">
 
     <!-- CUSTOM VALUE CHECKBOXES -->
-    <div ng-class="(field.field_required && field.field_value === '0')|switch:{'false':'','true':'alert-danger'}">
-        <div class="checkbox">
-            <input type="checkbox" ng-model="field.field_value"
-                                         ng-true-value="1" ng-false-value="0">
-            {{field.field_title}}
-            <span class="required-error" ng-show="field.field_required && field.field_value === '0'">(* required)</span>
-        </div>
-
+    <div ng-class="(field.field_required && field.field_value == false)|switch:{'false':'','true':'alert-danger'}">
+        <input type="checkbox" ng-model="field.field_value"
+               name="agreedToTerms" id="agreedToTerms" ng-required="field.field_required"/>
+        <label for="agreedToTerms">{{field.field_title}}</label>
     </div>
-
-
-
-
 </div>
+
+
 
 

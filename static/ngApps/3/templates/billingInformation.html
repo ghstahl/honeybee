@@ -10,14 +10,15 @@
 
                     <form role="form" name="myForm" id="myForm">
                         <div ng-repeat="field in content.form.form_fields">
-                            <field-directive field="field">
-
-                            </field-directive>
+                            <field-directive field="field"></field-directive>
                         </div>
                     </form>
                     <div class="form-actions">
                         <p class="text-center">
-                            <button class="btn btn-success right" type="button" ng-disabled="!myForm.$valid" ng-click="submit()"><i class="icon-edit icon-white"></i> Submit Form</button>
+                            <button class="btn btn-success right" type="button" ng-disabled="!myForm.$valid" ng-click="submit()">
+                                <i class="icon-edit icon-white"></i>
+                                Submit Form
+                            </button>
                             <button class="btn btn-danger right" type="button" ng-click="cancel()"><i class="icon-remove icon-white"></i> Cancel</button>
                         </p>
                     </div>

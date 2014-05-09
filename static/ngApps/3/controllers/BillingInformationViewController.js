@@ -13,43 +13,38 @@ define(['app',
     'directives/app-style',
     'directives/app-weight',
     'directives/app-dynTemplate',
-
     'directives/form/dyn-labelDirective',
     'directives/form/dyn-fieldDirective',
     'directives/form/dyn-formDirective'
 ], function (app) {
     app.registerController(
-        'ContactViewController',
-        [            '$scope', '$stateParams', 'accountManagementConfig','dynTemplateFactoryConfig',
-            function ($scope,   $stateParams,   accountManagementConfig,  dynTemplateFactoryConfig) {
-                $scope.view = 'ContactViewController says hi.. ';
+        'BillingInformationViewController',
+        [            '$scope', '$stateParams', 'accountManagementConfig','dynTemplateFactoryConfig','formId',
+            function ($scope,   $stateParams,   accountManagementConfig,dynTemplateFactoryConfig,formId) {
+                $scope.view = 'MyAccountViewController says hi.. ';
                 $scope.content = [];
 
                 $scope.page =
                 {
-                    heading: ' 3 Contact Us'
+                    heading: 'My Account Information'
                 };
-                $scope.oneAtATime = true;
-
-                $scope.items = ['Item 1', 'Item 2', 'Item 3'];
 
                 $scope.appGlobal = app.appGlobal;
-                $scope.content = accountManagementConfig;
                 $scope.dynTemplates = dynTemplateFactoryConfig;
-
-                $scope.content.forEach(function(entry) {
+           //     $scope.content = accountManagementConfig;
+          //      var record = {};
+                accountManagementConfig.forEach(function(entry) {
                     var rec = $scope.dynTemplates[entry.content_type];
                     entry.dynTemplate = rec;
 
                 });
-                $scope.submit = function(){
-                    alert('Form submitted..');
-                    $scope.form.submitted = true;
-                }
+                
+                angular.forEach(accountManagementConfig, function (form) {
+                    if (form.id == formId){
+                        $scope.content = form;
 
-                $scope.cancel = function(){
-                    alert('Form canceled..');
-                }
+                    }
+                });
 
             }
         ]);

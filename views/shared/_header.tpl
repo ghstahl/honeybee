@@ -55,7 +55,7 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/support/get">Support</a>
+                    <a href="/support/get/#/accountmanagement">Account Management</a>
                 </li>
 
                 <li>
