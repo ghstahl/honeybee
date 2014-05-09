@@ -201,5 +201,93 @@
                 }
             }
         }
+    },
+    {
+        "id":"{06c2ce5c-d204-41bf-88aa-883b9d4365c5}",
+        "content_type" : "billingInformation",
+        "title" : "Change Password",
+        "data" : "images/temp-photo.jpg",
+        "form":{
+            "form_name" : "PasswordInformation Form",
+            "form_fields" : {
+                "0" : {
+                    "field_id" : 0,
+                    "field_title" : "Change Password",
+                    "field_type" : "legend"
+                },
+                "1" : {
+                    "field_id" : 1,
+                    "field_title" : "Current Password",
+                    "field_type" : "password",
+                    "field_value" : "",
+                    "field_required" : true
+                },
+                "2" : {
+                    "field_id" : 2,
+                    "field_title" : "New Password",
+                    "field_type" : "password",
+                    "field_value" : "",
+                    "field_required" : true
+                },
+                "3" : {
+                    "field_id" : 3,
+                    "field_title" : "Re-enter New Password",
+                    "field_type" : "password",
+                    "field_value" : "",
+                    "field_required" : true
+                }
+            }
+        }
+    },
+    {
+        "id":"{dac6f51c-85e0-4950-b5bb-05aa49c9d333}",
+        "content_type" : "billingInformation",
+        "title" : "Account Information",
+        "data" : "images/temp-photo.jpg",
+        "form":{
+            "form_name" : "Account Information Form",
+            "form_fields" : {
+                "0" : {
+                    "field_id" : 0,
+                    "field_title" : "Account Information",
+                    "field_type" : "legend"
+                },
+                "1" : {
+                    "field_id" : 1,
+                    "field_title" : "First Name",
+                    "field_type" : "textfield",
+                    "field_value" : "John",
+                    "field_required" : true
+                },
+                "2" : {
+                    "field_id" : 2,
+                    "field_title" : "Last Name",
+                    "field_type" : "textfield",
+                    "field_value" : "Doe",
+                    "field_required" : true
+                },
+                "3" : {
+                    "field_id" : 3,
+                    "field_title" : "Email Address",
+                    "field_type" : "email",
+                    "field_value" : "test@example.com",
+                    "field_required" : true
+                },
+                "4" : {
+                    "field_id" : 4,
+                    "field_title" : "Re-type Email Address",
+                    "field_type" : "email",
+                    "field_value" : "",
+                    "field_required" : true
+                },
+                "5" : {
+                    "field_id" : 5,
+                    "field_title" : "Phone",
+                    "field_type" : "textfield",
+                    "field_value" : "",
+                    "field_required" : false
+                }
+            }
+        }
     }
 ]

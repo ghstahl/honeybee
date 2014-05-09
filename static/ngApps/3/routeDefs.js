@@ -201,7 +201,13 @@ define([
                 resolve: {
                     dummy: $couchPotatoProvider.resolveDependencies([
                         'controllers/AboutViewController'
-                    ])
+                    ]),
+                    accountManagementConfig:function(dummy,AccountManagementFactory) { // Inject a resource named 'Gists'
+                        return AccountManagementFactory.query().$promise;
+                    },
+                    dynTemplateFactoryConfig:function(dummy,DynTemplateFactory){
+                        return DynTemplateFactory.query().$promise;
+                    }
                 }
             })
             .state('about.list', {
@@ -209,12 +215,15 @@ define([
                 url: '/',
                 views: {
                     "view1": {
-                        templateUrl: app.appGlobal.baseUrl +  'templates/view.about.1.html',
-                        controller:'AboutView1Controller',
+                        templateUrl: app.appGlobal.baseUrl +  'templates/view.about.2.html',
+                        controller:'AboutView2Controller',
                         resolve: {
                             dummy: $couchPotatoProvider.resolveDependencies([
-                                'controllers/AboutView1Controller'
-                            ])
+                                'controllers/AboutView2Controller'
+                            ]),
+                            formId:function(dummy){
+                                return "{dac6f51c-85e0-4950-b5bb-05aa49c9d333}"
+                            }
                         }
                     },
                     "view2": {
@@ -223,7 +232,10 @@ define([
                         resolve: {
                             dummy: $couchPotatoProvider.resolveDependencies([
                                 'controllers/AboutView2Controller'
-                            ])
+                            ]),
+                            formId:function(dummy){
+                                return "{06c2ce5c-d204-41bf-88aa-883b9d4365c5}"
+                            }
                         }
                     },
                     "view3": {

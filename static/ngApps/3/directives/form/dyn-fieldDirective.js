@@ -43,6 +43,9 @@ define(['app'], function(app)
                     case 'radio':
                         templateUrl = 'radio.html';
                         break;
+                    case 'legend':
+                        templateUrl = 'legend.html';
+                        break;
                 }
                 var finalTemplateUrl = templateBaseUrl + templateUrl;
                 console.log("finalTemplateUrl:" + finalTemplateUrl);

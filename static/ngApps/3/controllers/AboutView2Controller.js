@@ -2,24 +2,26 @@
  * Created by Herb on 3/25/2014.
  */
 define([
-        'app',
-        'directives/app-color',
-        'directives/app-style',
-        'directives/app-weight'
+        'app'
     ], function(app)
 {
     app.registerController('AboutView2Controller',
-        [
-            '$scope',
+        [            '$scope', '$stateParams','formId',
+            function ($scope,   $stateParams , formId) {
 
-            function($scope)
-            {
-                $scope.appGlobal = app.appGlobal;
 
                 $scope.page =
                 {
                     heading: 'View2'
                 };
+
+               var accountManagementConfig = $scope.accountManagementConfig;
+                angular.forEach(accountManagementConfig, function (form) {
+                    if (form.id == formId){
+                        $scope.content = form;
+
+                    }
+                });
             }
         ]);
 });
