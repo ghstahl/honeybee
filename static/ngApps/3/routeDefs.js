@@ -174,8 +174,8 @@ define([
                     }
                 }
             })
-            .state('accountinformation', {
-                url: '/accountinformation',
+            .state('accountinformation2', {
+                url: '/accountinformation2',
                 controller: 'AccountInformationViewController',
                 templateUrl: app.appGlobal.baseUrl +  'views/accountInformation.html',
                 resolve: {
@@ -193,8 +193,8 @@ define([
                     }
                 }
             })
-            .state('about', {
-                url: '/about',
+            .state('accountinformation', {
+                url: '/accountinformation',
                 abstract:true,
                 templateUrl: app.appGlobal.baseUrl +  'views/about.html',
                 controller: 'AboutViewController',
@@ -210,7 +210,7 @@ define([
                     }
                 }
             })
-            .state('about.list', {
+            .state('accountinformation.list', {
                 // parent: 'contacts',
                 url: '/',
                 views: {
@@ -250,8 +250,8 @@ define([
                 }
             })
 
-            .state('account', {
-                url: '/account',
+            .state('about', {
+                url: '/about',
                 abstract:true,
                 templateUrl: app.appGlobal.baseUrl +  'views/contact.html',
                 controller: 'ContactViewController',
@@ -267,7 +267,7 @@ define([
                     }
                 }
             })
-            .state('account.list', {
+            .state('about.list', {
                 // parent: 'contacts',
                 url: '/',
                 views: {
